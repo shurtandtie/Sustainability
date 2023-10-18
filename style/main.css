@@ -3,15 +3,22 @@ body {
     margin-bottom: 20px;
     margin-right: 250px;
     margin-left: 250px;
-    font-family: Arial, sans-serif;
+    font-family: "basic-sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     font-size: 16px;
-    font-weight: normal;
 }
 
 h1 {
+    font-family: "basic-sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
     text-align: center;
     font-size: 5em}
 h2 {
+    font-family: "basic-sans", sans-serif;
+    font-weight: 700;
+    font-style: italic;
     text-align: center}
 p {
     text-align: left}
