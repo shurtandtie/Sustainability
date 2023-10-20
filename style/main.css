@@ -28,10 +28,11 @@ p {
     align-items: center;
 }
 
-.image {
-    flex: 1;
-}
+.image-container {
+    display: flex;
+  }
 
-.text {
-    flex: 1;
-}
+.image-container img {
+    width: 50%;
+    margin-right: 10px;
+  }
