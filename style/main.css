@@ -36,3 +36,27 @@ p {
     width: 50%;
     margin-right: 10px;
   }
+
+.container img {
+    margin-right: 25px;
+}
+
+.lonecontainer {
+    width:100%;
+}
+
+.box {
+    background-color: darkred;
+    padding:25px;
+    color: white;
+}
+
+.box img{
+    margin-left:0;
+    padding: 0 25 25 0;
+    float:left;
+}
+
+.box boxcaption {
+    vertical-align:middle;
+}
