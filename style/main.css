@@ -60,3 +60,21 @@ p {
 .box boxcaption {
     vertical-align:middle;
 }
+
+figure.photogrid {
+    margin-left: 0;
+    padding: 25 0 25 0;
+    width:33%;
+}
+
+.fullwidthcontainer {
+    width:90%;
+}
+
+
+.image {
+    flex:1;
+    display: inline-block; /* Display images in the same row */
+    margin: 5px; 
+}   
+
