@@ -34,7 +34,8 @@ p {
 
 .image-container img {
     width: 50%;
-    margin-right: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
   }
 
 .container img {
@@ -74,7 +75,7 @@ figure.photogrid {
 
 .image {
     flex:1;
-    display: inline-block; /* Display images in the same row */
+    display: inline-block; /
     margin: 5px; 
 }   
 
