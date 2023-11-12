@@ -100,12 +100,37 @@ p {
     float:center;
 }
 
-
-/*
-.container {
+.container pc {
+    font-size:18px;
+    line-height:1.8;
+    margin:0px;
+    text-align:left;
+    float:left;
+}
+.columncontainer {
     display: flex;
-    text-align: center;
-}*/
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 0 300px
+}
+
+.column {
+    width: 48%; 
+    margin: 0
+}
+
+.text-column {
+    width: 38%; 
+    margin-bottom: 20px; 
+    box-sizing: border-box; 
+}
+
+.image-column {
+    width: 58%; 
+    margin-bottom: 20px; 
+    box-sizing: border-box; 
+}
 
 .image-container {
     display: flex;
@@ -130,15 +155,6 @@ figure.threeimage figcaption {
     text-align:center;
     padding-top:10px;
 }
-
-/*
-.container img {
-    margin-right: 25px;
-}
-
-.lonecontainer {
-    width:100%;
-}*/
 
 .box {
     background-color: #06ba38;
@@ -211,7 +227,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3; /* Change to your desired hover color */
+    background-color: #0056b3; 
 }
 
 
