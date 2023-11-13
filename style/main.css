@@ -2,22 +2,27 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 0 auto 0 auto;
+    font-family: "lato", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
 .header {
     margin: 0;
     text-align: center;
-    font-family: "basic-sans", sans-serif;
-    background-image:url(../images/NCW01516.jpg);
+    background-image:url(/images/NCW01516.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     height: 800px;
 }
-
 .header img{
     width:100%;
 }
-
 .header h1 {
     font-size: 75px;
     position: relative;
@@ -30,7 +35,6 @@
     background: linear-gradient(to left, white 90%, transparent);
     margin-bottom:0;
 }
-
 .header h2 {
     font-size:35px;
     position: relative;
@@ -55,20 +59,16 @@
   width: 36px;
   height: 36px;
 }
-
 .hamburger {
   background: white;
 }
-
 .close {
   background: black;
 }
-
 .hamburger img, .close img {
   width: 100%;
   height: 100%;
 }
-
 .navbar {
   position: absolute;
   z-index: 1000;
@@ -86,15 +86,11 @@
   transform: translateY(-100%);
   transition: transform 0.2s ease;
 }
-
-
 .navbar:target {
   transform: translateY(0);
 }
-
 li a {
   display: block;
-  font-family: 'Open Sans', sans-serif;
   color: black;
   font-weight: bold;
   font-size: 1.2rem;
@@ -102,57 +98,39 @@ li a {
   border-bottom: 1px solid white;
   padding-bottom: 0.5rem;
 }
-
 li a:hover, li a:focus {
   /* show border bottom */
   border-bottom: 1px solid black;
 }
 
-body {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-family: "basic-sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 16px;
-}
-
 h1 {
-    font-family: "basic-sans", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    text-align: center;
-    font-size: 5em;
     margin-bottom: 10px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 5em;
 }
-
 h2 {
-    font-family: "basic-sans", sans-serif;
+    text-align: center;
+    font-style: normal;
     font-weight: 700;
     font-size: 3em;
-    font-style: normal;
-    text-align: center}
-
+}
 h3 {
-    font-family: "basic-sans", sans-serif;
-    font-weight: 700;
-    font-size: 2em;
+    text-align: center;
     font-style: normal;
-    text-align: center}
+    font-weight: 700;
+    font-size: 2em;    
 }
 
 p {
-    text-align: left}
+    text-align: left;
+}
 
 .container {
     text-align:center;
     margin:50px;
 }
-
-.container img {
-    margin:0 50px;
-}
-
 .container p {
     font-size:18px;
     line-height:1.8;
@@ -160,7 +138,9 @@ p {
     text-align:left;
     float:center;
 }
-
+.container img {
+    margin:0 50px;
+}
 .container pc {
     font-size:18px;
     line-height:1.8;
@@ -223,32 +203,29 @@ figure.threeimage figcaption {
     color: white;
     margin: 20px 200px;
 }
-
 .boxdata {
-    background-color: #e66e65;
+    border-width: thick;
+    border-style: dashed;
+    border-color: #E65E55;
     padding:10 0;
     color: white;
     margin: 20px 200px;
     overflow:auto;
 }
-
 .boxdata img{
     margin-left:25;
     padding: 25 25 25 0;
     float:left;
 }
-
 .boxdata p {
     padding: 0 25px;
     font-size: 20px;
     text-align: left;
     color:black;
 }
-
 .box boxcaption {
     vertical-align:middle;
 }
-
 .box p {
     padding: 0 25px;
     font-size: 25px;
@@ -278,7 +255,6 @@ figure.threeimage figcaption {
 
 button {
     width: 25%;
-    font-family: "basic-sans";
     background-color: #619CFF;
     color: white; 
     padding: 25px; 
@@ -286,9 +262,6 @@ button {
     border: none;
     cursor: pointer;
 }
-
 button:hover {
     background-color: #0056b3; 
 }
-
-
