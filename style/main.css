@@ -24,10 +24,10 @@
     top:60%;
     margin-left: 50%;
     text-align: left;
-    padding-left: 40px;
-    padding-right: 20px;
+    padding-left: 75px;
+    padding-right: 0px;
     color: black;
-    background-color:#06BA38;
+    background: linear-gradient(to left, white 90%, transparent);
     margin-bottom:0;
 }
 
@@ -38,14 +38,75 @@
     margin-top:0;
     margin-left: 50%;
     text-align: left;
-    padding-left: 40px;
+    padding-left: 75px;
     padding-right: 60px;
     padding-bottom: 20px;
     color: black;
-    background-color:#06BA38;
+    background: linear-gradient(to left, white 90%, transparent);
     
 }
 
+.hamburger, .close {
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+}
+
+.hamburger {
+  background: white;
+}
+
+.close {
+  background: black;
+}
+
+.hamburger img, .close img {
+  width: 100%;
+  height: 100%;
+}
+
+.navbar {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  list-style: none;
+  background: white;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: transform 0.2s ease;
+}
+
+
+.navbar:target {
+  transform: translateY(0);
+}
+
+li a {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-bottom: 1px solid white;
+  padding-bottom: 0.5rem;
+}
+
+li a:hover, li a:focus {
+  /* show border bottom */
+  border-bottom: 1px solid black;
+}
 
 body {
     margin-top: 20px;
