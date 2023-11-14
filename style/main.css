@@ -188,13 +188,13 @@ figure.smallphoto img{
     margin: 0
 }
 
-.text-column {
+.narrow-column {
     width: 38%; 
     margin-bottom: 20px; 
     box-sizing: border-box; 
 }
 
-.image-column {
+.wide-column {
     width: 56%; 
     margin-bottom: 20px; 
     box-sizing: border-box; 
