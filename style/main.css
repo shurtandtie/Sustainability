@@ -235,7 +235,7 @@ figure.threeimage figcaption {
     border-style: dashed;
     border-color: #E65E55;
     padding:10 0;
-    color: white;
+    color: black;
     margin: 20px 200px;
     overflow:auto;
 }
