@@ -239,7 +239,9 @@ figure.threeimage figcaption {
     padding:20;
     color: white;
     margin: 20px 200px;
+    overflow: auto;
 }
+
 .boxdata {
     border-width: thick;
     border-style: dashed;
@@ -249,6 +251,7 @@ figure.threeimage figcaption {
     margin: 20px 200px;
     overflow:auto;
 }
+
 .boxdata img{
     margin-left:25;
     padding: 25 25 25 0;
@@ -265,6 +268,13 @@ figure.threeimage figcaption {
 }
 .box p {
     padding: 0 25px;
+    font-size: 25px;
+    text-align: center;
+    color:black;
+}
+
+.box pc {
+    padding: 0 10px;
     font-size: 25px;
     text-align: center;
     color:black;
