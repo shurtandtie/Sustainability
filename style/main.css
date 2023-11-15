@@ -176,12 +176,21 @@ figure.smallphoto img{
     text-align:left;
     float:left;
 }
+
 .columncontainer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    margin: 0 300px
+    margin: 0 100px
+}
+
+.newcolumncontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 0 200px
 }
 
 .column {
