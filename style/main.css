@@ -180,6 +180,14 @@ figure.smallphoto img{
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
+    margin: 0 100px
+}
+
+.newcolumncontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
     margin: 0 300px
 }
 
