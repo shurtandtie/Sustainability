@@ -356,7 +356,7 @@ figure.threeimage figcaption {
 }
 
 .box {
-    background-color: #06ba38;
+    background-color: #2A6041;
     padding:20;
     color: white;
     margin: 20px 200px;
@@ -366,7 +366,7 @@ figure.threeimage figcaption {
 .boxdata {
     border-width: thick;
     border-style: dashed;
-    border-color: #E65E55;
+    border-color: #2a6041;
     padding:10 0;
     color: black;
     margin: 20px 200px;
