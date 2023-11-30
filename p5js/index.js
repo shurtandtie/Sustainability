@@ -103,8 +103,6 @@ function drawDashedLine(x1, y1, x2, y2, dashLength) {
 }
 
 function openLink(index) {
-  console.log('Opening link:', links[index]);
-
   // button to links
   const links = [
     'index.html',
