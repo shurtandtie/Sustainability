@@ -448,3 +448,31 @@ button:hover {
     color:black;
     border: none;
 }
+
+/* footer and timeline */
+
+.next {
+    background-color: #D4E09B;
+    padding:20;
+    font-size: 25px;
+    color: #000000;
+    display: inline-block;
+    margin: 20px auto;
+    overflow: auto;
+}
+
+.black-footer {
+    background-color: black;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    margin-top: auto;
+    text-align: center; 
+}
+
+#timelinecontainer {
+    width: 780px;
+    height: 172px;
+    margin: 0px auto;
+    background-color: #000000;
+    border: 1px solid #000000;
+}
