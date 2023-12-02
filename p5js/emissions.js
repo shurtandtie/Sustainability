@@ -17,19 +17,6 @@ function setup() {
   let canvas = createCanvas(780, 172);
   canvas.parent('timelinecontainer');
   stroke(255);
-
-  // buttons
-  for (let i = 0; i < images.length; i++) {
-    let x = i * spacing;
-    let y = height - 100;
-
-    buttons[i] = createButton('');
-    buttons[i].position(x + canvas.position().x, y + canvas.position().y);
-    buttons[i].size(100, 100);
-    buttons[i].style('background-color', 'transparent');
-
-    buttons[i].mousePressed(() => openLink(i));
-  }
 }
 
 function draw() {
@@ -99,17 +86,4 @@ function drawDashedLine(x1, y1, x2, y2, dashLength) {
     let dashEndX = min(x1 + (i + 1) * deltaX, x2);
     line(dashStartX, y1, dashEndX, y2);
   }
-}
-
-function openLink(index) {
-  // button to links
-  const links = [
-    'index.html',
-    'emissions.html',
-    'energy.html',
-    'waste.html',
-    'join.html',
-  ];
-
-  window.open(links[index], '_self');
 }
