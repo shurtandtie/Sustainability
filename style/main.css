@@ -484,7 +484,7 @@ button:hover {
 
 #button1 {
     bottom: 0;
-    right: 0;
+    left: 0;
 }
 
 #button2 {
@@ -507,7 +507,7 @@ button:hover {
 
 #button5 {
     bottom: 0;
-    left: 0;
+    right: 0;
 }
 
 .toggle-heading {
