@@ -57,6 +57,10 @@ color: green;
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto 37px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Adjust the z-index as needed */
 }
 
 #menuToggle {
@@ -329,6 +333,11 @@ figure.smallphoto img {
     margin-right: 10px;
   }
 
+.image-container2 {
+    display: inline-block;
+    width:70%;
+    text-align:center;
+  }
 .gallery {
     display:flex;
     margin:10px;
@@ -499,4 +508,43 @@ button:hover {
 #button5 {
     bottom: 0;
     left: 0;
+}
+
+.toggle-heading {
+    cursor: pointer;
+    color: black;
+    text-decoration: underline;
+    font-size: 24px;
+    margin: 0 auto 0 auto;
+    text-align: left;
+    display: block;
+}
+
+/* Style for Toggle Content */
+.toggle-content {
+    display: none;
+    color: black;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Show content when checkbox is checked */
+input[type="checkbox"]:checked + .toggle-heading + .toggle-content {
+    display: block;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.95); /* White background with 70% opacity */
+    padding: 20px;
+    width: 70%; /* Adjust the width as needed */
+    text-align: left;
+    color: black; /* Text color */
 }
