@@ -10,7 +10,7 @@ let labels = [];
 let currentBoxIndex = 0;
 let selectedBox = null;
 let score = 0;
-let totalBoxes = 10;
+let totalBoxes = 19; //idk why but this the number that gets 10 boxes to show
 let gameStarted = false;
 
 let compostBinImage;
@@ -24,41 +24,57 @@ function preload() {
   donationBinImage = loadImage('images/donationopened.png');
   disposalBinImage = loadImage('images/disposalopened.png');
 }
+
 function setup() {
   let canvas = createCanvas(650, 400);
+
+  // links to waste.html & binds to container
   canvas.elt.id = 'wastegame';
   document.getElementById('wastegame').appendChild(canvas.elt);
-  
-textSize(20);
+
+  textSize(20);
   textAlign(CENTER, CENTER);
-
-  startButton = createButton('Start');
-  startButton.position(width / 2.15, height / 2.10);
-  startButton.mousePressed(startGame);
-  startButton.style('background-color', color(28, 33, 28));
-  startButton.style('color', color(255))
-
-  compostBinImage = loadImage('images/compostopened.png');
-  recyclingBinImage = loadImage('images/recyclingopened.png');
-  donationBinImage = loadImage('images/donationopened.png');
-  disposalBinImage = loadImage('images/disposalopened.png');
 
   createBoxes();
   createLabels();
 }
 
 function draw() {
-  background(220);
-
-  background(gameStarted ? color(255,255,255) : color(255,255,255)); //change background color when on start : in-game? not sure
+  background(255);
 
   if (gameStarted) {
     displayBoxes();
     displayScore();
+
+    // endgame
+    if (currentBoxIndex >= 10) {
+      fill(255);
+
+      // hide bin labels and photos
+      labels = [];
+      compostBinImage = recyclingBinImage = donationBinImage = disposalBinImage = null;
+      
+      // hide score in the top left corner
+      fill(255);
+
+      fill(0);
+      textSize(32);
+      text("Game Over", width / 2, height / 2 - 30);
+      text(`Final Score: ${score}`, width / 2, height / 2 + 15);
+    }
   } else {
     displayInstructions();
   }
   displayBins();
+}
+
+//sets randomize boxes
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
 
 function createBoxes() { // items
@@ -97,27 +113,23 @@ function createBoxes() { // items
     "Eggshells",
   ];
 
-  // randomize the order
-  shuffleArray(labels);
-
   // 10 boxes for each game
-  const numBoxes = Math.min(totalBoxes, labels.length);
-  for (let i = 0; i < numBoxes; i++) {
-    const label = labels[i];
+  const remainingBoxes = totalBoxes - currentBoxIndex;
+  const shuffledLabels = shuffleArray(labels).slice(0, remainingBoxes);
+  
+  for (let i = 0; i < remainingBoxes; i++) {
+    const label = shuffledLabels[i];
     const bin = getBinByLabel(label);
+      
+    // Move these calculations inside the draw loop
     const textWidthValue = textWidth(label) + 10;
     const textHeightValue = textAscent() + textDescent() + 10;
+  
     boxes.push({ x: random(width - textWidthValue), y: random(50, 200), label, bin, width: textWidthValue, height: textHeightValue });
   }
 }
 
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-}
-
+//separated to make easier to move
 function createLabels() {
   for (let bin of Object.values(bins)) {
     labels.push({ x: bin.x + 50, y: bin.y + 25, label: bin.label });
@@ -191,7 +203,7 @@ function displayInstructions() {
 
 function startGame() {
   gameStarted = true;
-  startButton.hide(); 
+  startButton.remove();
 }
 
 function restartGame() {
@@ -278,42 +290,34 @@ function mouseReleased() {
       mouseX > correctBin.x &&
       mouseX < correctBin.x + 100 &&
       mouseY > correctBin.y &&
-      mouseY < correctBin.y + 50;
+      mouseY < correctBin.y + 100;
+    
+    const placedInAnyBin =
+      mouseX > bins.compost.x &&
+      mouseX < bins.disposal.x + 100 &&
+      mouseY > bins.compost.y &&
+      mouseY < bins.disposal.y + 100;
 
     if (placedInCorrectBin) {
       if (selectedBox.bin === correctBin) {
         score += 10; // correct bin
-      } else {
-        score -= 10; // incorrect bin
       }
-
-      // prevent duplicate boxes
-      boxes = boxes.filter((b) => b !== selectedBox);
-      selectedBox = null;
-
-      if (boxes.length === 0) {
-        setTimeout(() => {
-          if (confirm(`Game Over!\nYour score is ${score}\nDo you want to restart?`)) {
-            restartGame();
-          }
-        }, 500);
-      }
-    } else {
+    } else if (placedInAnyBin) {
       // wrong bin
       score -= 10;
+    } else {
+      // If not placed in any bin, do not increase currentBoxIndex
       selectedBox = null;
+      return;
+    }
 
-      // move on to the next box
+    // prevent duplicate boxes
+    boxes = boxes.filter((b) => b !== selectedBox);
+    selectedBox = null;
+
+    // Increase currentBoxIndex only when placed in any bin
+    if (placedInAnyBin) {
       currentBoxIndex++;
-
-      // all 10 have been used
-      if (currentBoxIndex >= totalBoxes) {
-        setTimeout(() => {
-          if (confirm(`Game Over!\nYour score is ${score}\nDo you want to restart?`)) {
-            restartGame();
-          }
-        }, 500);
-      }
     }
   } else {
     for (let box of boxes) {
@@ -327,15 +331,4 @@ function mouseReleased() {
       }
     }
   }
-}
-
-function restartGame() {
-  boxes = [];
-  score = 0;
-  gameStarted = false;
-  selectedBox = null;
-  createBoxes();
-  createLabels();
-  startButton.show();
-  restartButton.size(70, 40);
 }
