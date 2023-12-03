@@ -60,7 +60,6 @@ function draw() {
       fill(0);
       textSize(32);
       text("Game Over", width / 2, height / 2 - 30);
-      text(`Final Score: ${score}`, width / 2, height / 2 + 15);
     }
   } else {
     displayInstructions();
