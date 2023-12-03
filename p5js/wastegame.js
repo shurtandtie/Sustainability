@@ -195,7 +195,7 @@ function displayScore() {
 function displayInstructions() {
   fill(0);
   textSize(24);
-  text("How well do you know your waste?", width / 2, height / 2.5);
+  text("Let's test your knowledge.", width / 2, height / 2.5);
   textSize(18);
   text("Drag and drop items into the correct bins.", width / 2, height / 2 + 40);
 }
