@@ -95,11 +95,19 @@
     <div class ="boxdata">
 
         <h3>Think you know where your waste should go?</h3>
-        <button id="startButton-waste" onclick="startGame()">Findout</button>
         <br><br>
         <div id="wastegame"></div>
         <br><br>
-        <button onclick="restartGame()">Restart</button>
+        <div class="newcolumncontainer" style = "width:70%;">
+            <div class="column">
+                <div id="wastegame"></div>
+            </div>
+            <div class="column">
+                <button id="startButton-waste" onclick="startGame()">Start</button>
+                <br>
+                <button onclick="restartGame()">Restart</button>
+            </div>
+        </div>  
         <br><br><br><br>
 
     </div>
@@ -121,7 +129,7 @@
     <footer class="black-footer">
     
         <br><br>
-        <div class="next">Join our mission.</div>
+        <a href= "join.html"><button type="button">Join us and see how you can get involved.</button></a>
         <br><br>  
         <div id="timelinecontainer">
             <a href="index.html" class="timeline-button" id="button1"></a>
